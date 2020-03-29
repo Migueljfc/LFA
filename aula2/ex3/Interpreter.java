@@ -5,53 +5,52 @@ public class Interpreter extends CalculatorBaseVisitor<Integer> {
    }
 
    @Override public Integer visitStat(CalculatorParser.StatContext ctx) {
-      int res = 0;
-      if(ctx.expr() != null){
-         res = visit(ctx.expr());
-         System.out.println("Result: " + res);
+      if(ctx.expr()!=null){
+        int x =visit(ctx.expr());
+        System.out.println("Resultado: "+x);
       }
-      return res;
-   }
-
-   @Override public Integer visitExprAddSub(CalculatorParser.ExprAddSubContext ctx) {
-      int op1 = visit(ctx.expr(0));
-      int op2 = visit(ctx.expr(1));
-      int res = 0;
+       return 0;
+    }
+ 
+    @Override public Integer visitExprAddSub(CalculatorParser.ExprAddSubContext ctx) {
+      int v1 = visit(ctx.expr(0));
+      int v2 = visit(ctx.expr(1));
+      int result =0;
       switch(ctx.op.getText()){
-         case "+":
-            res = op1 + op2;
-         break;
-         case "-":
-            res= op1 - op2;
-         break;
+        case "+": result = v1 + v2; break;
+        case "-": result = v1 - v2; break;
       }
-      return res;
-   }
-
-   @Override public Integer visitExprParent(CalculatorParser.ExprParentContext ctx) {
-      return visit(ctx.expr());
-   }
-
-   @Override public Integer visitExprInteger(CalculatorParser.ExprIntegerContext ctx) {
-      return Integer.parseInt(ctx.Integer().getText());
-   }
-
-   @Override public Integer visitExprMultDivMod(CalculatorParser.ExprMultDivModContext ctx) {
-      int op1 = visit(ctx.expr(0));
-      int op2 = visit(ctx.expr(1));
-      int res = 0;
+      return result;
+    }
+ 
+    @Override public Integer visitExprIntegerSignal(CalculatorParser.ExprIntegerSignalContext ctx) {
+      int value = visit(ctx.expr());
       switch(ctx.op.getText()){
-         case "*":
-            res= op1 * op2;
-         break;
-         case "/":
-            res = op1 / op2;
-         break;
-         case "%":
-            res = op1 % op2;
-         break;
+        case "+": return value;
+        case "-": return -value;
       }
-      return res;
-
-   }
-}
+ 
+       return -1;
+    }
+ 
+    @Override public Integer visitExprParent(CalculatorParser.ExprParentContext ctx) {
+ 
+       return visit(ctx.expr());
+    }
+ 
+    @Override public Integer visitExprInteger(CalculatorParser.ExprIntegerContext ctx) {
+       return Integer.parseInt(ctx.Integer().getText());
+    }
+ 
+    @Override public Integer visitExprMultDivMod(CalculatorParser.ExprMultDivModContext ctx) {
+       int v1 = visit(ctx.expr(0));
+       int v2 = visit(ctx.expr(1));
+       int result =0;
+       switch(ctx.op.getText()){
+         case "*": result = v1 * v2; break;
+         case "/": result = Math.round(v1/v2); break;
+         case "%": result = Math.round(v1%v2); break;
+       }
+       return result;
+    }
+ }
