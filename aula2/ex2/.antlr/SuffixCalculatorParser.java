@@ -1,4 +1,4 @@
-// Generated from /home/miguel/MEGAsync/2 ano/LFA/aula2/ex2/SuffixCalculator.g4 by ANTLR 4.7.1
+// Generated from /home/miguel/MEGAsync/2 ano/LFA/aula2/ex2/SuffixCalculator.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class SuffixCalculatorParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.7.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -19,16 +19,25 @@ public class SuffixCalculatorParser extends Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, Number=5, NEWLINE=6, WS=7;
 	public static final int
 		RULE_program = 0, RULE_stat = 1, RULE_expr = 2;
-	public static final String[] ruleNames = {
-		"program", "stat", "expr"
-	};
+	private static String[] makeRuleNames() {
+		return new String[] {
+			"program", "stat", "expr"
+		};
+	}
+	public static final String[] ruleNames = makeRuleNames();
 
-	private static final String[] _LITERAL_NAMES = {
-		null, "'*'", "'/'", "'+'", "'-'"
-	};
-	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, null, null, "Number", "NEWLINE", "WS"
-	};
+	private static String[] makeLiteralNames() {
+		return new String[] {
+			null, "'*'", "'/'", "'+'", "'-'"
+		};
+	}
+	private static final String[] _LITERAL_NAMES = makeLiteralNames();
+	private static String[] makeSymbolicNames() {
+		return new String[] {
+			null, null, null, null, null, "Number", "NEWLINE", "WS"
+		};
+	}
+	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
 	/**
@@ -78,6 +87,7 @@ public class SuffixCalculatorParser extends Parser {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
+
 	public static class ProgramContext extends ParserRuleContext {
 		public TerminalNode EOF() { return getToken(SuffixCalculatorParser.EOF, 0); }
 		public List<StatContext> stat() {
