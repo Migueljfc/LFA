@@ -1,0 +1,11 @@
+int i = 1;
+int peso = 70;
+int aumentodepeso = 20;
+
+for(int j = 0;j<10;j++){
+    peso = peso + aumentodepeso; //comentario
+}
+
+print(peso);
+
+unit hora = 3600 s;

@@ -1,0 +1,11 @@
+int i = 0;
+unit peso = 70 kg;
+unit aumentodepeso = 10 kg;
+
+do{
+    peso = peso + aumentodepeso;
+    print(i); 
+    i++;   
+}while(i < 10);
+
+print(peso);

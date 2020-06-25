@@ -1,0 +1,10 @@
+Tempo
+{milissegundo=Name: ms, Value: 0.001, ano=Name: ano, Value: 2.90304E7, minuto=Name: min, Value: 60.0, semana=Name: semana, Value: 604800.0, hora=Name: h, Value: 3600.0, Segundo=Name: s, Value: 1.0, mes=Name: mes, Value: 2419200.0, dia=Name: dia, Value: 86400.0, microsegundo=Name: ys, Value: 1.0E-6, nanosegundo=Name: ns, Value: 1.0E-9}
+Corrente
+{MicroAmpere=Name: yA, Value: 1.0E-6, megampere=Name: MA, Value: 1000000.0, kiloampere=Name: KA, Value: 1000.0, gigampere=Name: GA, Value: 1.0E9, NanoAmpere=Name: nA, Value: 1.0E-9, Ampere=Name: A, Value: 1.0, Miliampere=Name: mA, Value: 0.001}
+Massa
+{centigrama=Name: cg, Value: 1.0E-5, tonelada=Name: ton, Value: 1000.0, kilograma=Name: kg, Value: 1.0, decagrama=Name: dag, Value: 0.01, grama=Name: g, Value: 0.001, decigrama=Name: dg, Value: 1.0E-4, miligrama=Name: mg, Value: 1.0E-6, hectograma=Name: Hg, Value: 0.1}
+Distancia
+{Metro=Name: m, Value: 1.0, decimetro=Name: dm, Value: 0.1, kilometro=Name: km, Value: 1000.0, decametro=Name: dam, Value: 10.0, milimetro=Name: mm, Value: 0.001, hectometro=Name: hm, Value: 100.0, centimetro=Name: cm, Value: 0.01}
+Tensao
+{Microvolt=Name: yV, Value: 1.0E-6, gigavolt=Name: GV, Value: 1.0E9, megavolt=Name: MV, Value: 1000000.0, Nanovolt=Name: nV, Value: 1.0E-9, kilovolt=Name: KV, Value: 1000.0, Volt=Name: V, Value: 1.0, Milivolt=Name: mV, Value: 0.001}

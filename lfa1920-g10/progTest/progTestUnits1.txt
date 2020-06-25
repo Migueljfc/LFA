@@ -1,0 +1,9 @@
+unit peso = 15 kg;
+int i = 15;
+unit pesos = 10 g;
+
+unit soma = 0 kg;
+
+soma = peso + pesos;
+
+print(soma);

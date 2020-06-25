@@ -1,0 +1,7 @@
+unit peso = 15 kg;
+int i = 15;
+unit pesos = 10 V;
+
+unit soma = peso + pesos;
+
+print(soma);

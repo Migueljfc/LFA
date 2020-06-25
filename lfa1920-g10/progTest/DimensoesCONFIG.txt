@@ -1,0 +1,49 @@
+dim Distancia -> Metro -> m;
+dim Tempo -> Segundo -> s;
+dim Massa -> kilograma -> kg;
+dim Corrente -> Ampere -> A;
+dim Tensao -> Volt -> V;
+
+
+kilometro - km » 1000 m;
+hectometro - hm » 100 m;
+decametro - dam » 10 m;
+decimetro - dm » 0.1 m;
+centimetro - cm » 0.01 m; 
+milimetro - mm » 0.001 m;
+
+
+ano - ano » 29030400 s;
+mes - mes » 2419200 s;
+semana - semana » 604800 s;
+dia - dia » 86400 s;
+hora - h » 3600 s;
+minuto - min » 60 s;
+milissegundo - ms » 0.001 s;
+microsegundo - ys » 0.000001 s; 
+nanosegundo - ns » 0.000000001 s;
+
+
+tonelada - ton » 1000 kg;
+hectograma - Hg » 0.1 kg;
+decagrama - dag » 0.01 kg;
+grama - g » 0.001 kg;
+decigrama - dg » 0.0001 kg;
+centigrama - cg » 0.00001 kg;
+miligrama - mg » 0.000001 kg; 
+
+
+gigampere - GA » 1000000000 A;
+megampere - MA » 1000000 A;
+kiloampere - KA » 1000 A;
+Miliampere - mA » 0.001 A;
+MicroAmpere - yA » 0.000001 A;
+NanoAmpere - nA » 0.000000001 A;
+
+
+gigavolt - GV » 1000000000 V;
+megavolt - MV » 1000000 V;
+kilovolt - KV » 1000 V;
+Milivolt - mV » 0.001 V;
+Microvolt - yV » 0.000001 V;
+Nanovolt - nV » 0.000000001 V;

@@ -1,0 +1,16 @@
+unit ola = 15 kg;
+int i = 1;
+int quarentena = 31; //comentario
+real peso=70;
+
+real aumentodepeso = 3;
+while(i < quarentena) {
+    peso = peso + aumentodepeso;
+    i++;
+}
+
+print(peso);
+
+/*
+  comentario multilinha
+*/

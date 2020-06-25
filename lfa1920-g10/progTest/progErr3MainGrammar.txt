@@ -1,0 +1,10 @@
+unit peso = 50 kg;
+unit aumentodepeso = 10 kg;
+
+for(int j = 0;j<quarentena;j++){
+    peso = peso + aumentodepeso; 
+}
+
+int i = 30;
+
+peso + i;

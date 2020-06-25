@@ -1,0 +1,6 @@
+unit metros = 10 m;
+unit segundos = 5 s;
+
+unit velocidade = metros / segundos;
+
+print(velocidade);

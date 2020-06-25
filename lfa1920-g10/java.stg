@@ -1,0 +1,182 @@
+booleanValue ::= [
+  "true":"true",
+  "false":"false",
+  default:"null"
+]
+
+typeValue ::= [
+  "int" :"int",
+  "real" : "double",
+  "unit":"double",
+  "boolean":"boolean",
+  default:"null"
+]
+
+typeFormat ::= [
+  "int":"%d",
+  "real":"%lg",
+  "boolean":"%b",
+  default:"null"
+]
+
+operators ::= [
+  "*":"*",
+  "/":"/",
+  "\\":"/",
+  "\\\\":"%",
+  "+":"+",
+  "-":"-",
+  default:"null"
+]
+
+incrementOperators ::= [
+  "++":"++",
+  "--":"--",
+  default:"null"
+]
+
+condiOperators ::= [
+  ">":">",
+  ">=":">=",
+  "<":"<",
+  "<=":"<=",
+  "==":"==",
+  "!=":"!=",
+  default:"null"
+]
+
+//templates
+
+module(name, stat) ::= <<
+import java.io.*;
+
+public class <name>{
+  public static void main (String[] args) throws Exception{
+    <stats(stat)>
+  }
+}
+>>
+
+stats(stat) ::= <<
+<if(stat)><stat; separator="\n"><endif>
+>>
+
+if_clause(conditional, stat, statIf) ::=<<
+<stats(stat)>
+if(<conditional>){
+  <stats(statIf)>
+}
+>>
+
+else_clause(conditional, statElse) ::=<<
+else{
+  <stats(statElse)>
+}
+>>
+
+//for(stat, assignment, conditional, increment_decrement, statFor) ::= <<
+//<stats(stat)>
+//for(<assignment> ; <conditional> ; <increment_decrement>) {
+//  <stats(statFor)>
+//}
+//>>
+
+for(stat,inc_dec, declaration, conditional, statFor) ::= <<
+<declaration>
+<stats(stat)>
+while(<conditional>) {
+  <stats(statFor)>
+  <inc_dec>
+}
+>>
+
+while(stat, conditional, statWhile) ::= <<
+<stats(stat)>
+while(<conditional>) {
+  <stats(statWhile)>
+}
+>>
+
+do_while(stat, conditional, statDoWhile) ::=<<
+<stats(stat)>
+do {
+  <stats(statDoWhile)>
+}while(<conditional>);
+>>
+
+init(value) ::= "<if(value)> = <value><endif>"
+decl(type,inst,value) ::= "<typeValue.(type)> <inst><init(value)>;"
+
+assignment(stat,inst,value) ::= <<
+<stats(stat)>
+<inst> = <value>;
+>>
+
+print(stat, type, expr) ::= <<
+<stats(stat)>
+System.out.println(<expr>);
+>>
+
+conditional(stat, e1, op, e2) ::= <<
+<e1> <op> <e2>
+>>
+
+block(stat) ::=<<
+<stats(stat)>
+>>
+
+binaryExpression(stat, type, var, e1, op, e2) ::= <<
+<stats(stat)>
+<decl(type,var,[e1," ",op," ",e2])>
+>>
+
+literalBoolean(value) ::= "<booleanValue.(value)>"
+
+increment_decrement(inst,op) ::= <<
+<inst><incrementOperators.(op)>;
+>>
+
+unitCreate(inst, unitName, value) ::= <<
+Units <inst> = new Units(<unitName>, <value>);
+>> 
+
+unitDecl(inst, unit) ::= <<
+Units <inst> = Units.declUnit(<unit>);
+>>
+
+unit_increment(var) ::= <<
+Units.IncrementUnit(<var>);
+>>
+
+unit_decrement(var) ::= <<
+Units.DecrementUnit(<var>);
+>>
+
+PrintUnit(stat,type,unit) ::= <<
+<stats(stat)>
+Units.PrintUnit(<unit>);
+>>
+
+Unitadd(var, unit1, unit2) ::= <<
+Units <var> = Units.Unitadd(<unit1>,<unit2>);
+>>
+
+Unitsub(var, unit1, unit2) ::= <<
+Units <var> = Units.Unitsub(<unit1>,<unit2>);
+>>
+
+UnitMultiply(var, unit1, unit2) ::= <<
+Units <var> = Units.UnitMultiply(<unit1>,<unit2>);
+>>
+
+UnitConstMultiply(var, unit, const) ::= <<
+Units <var> = Units.UnitConstMultiply(<unit>,<const>);
+>>
+
+UnitConstDivide(var, unit, const) ::= <<
+Units <var> = Units.UnitConstDivide(<unit>,<const>);
+>>
+
+UnitDivide(var, unit1, unit2) ::= <<
+Units <var> = Units.UnitDivide(<unit1>,<unit2>);
+>>

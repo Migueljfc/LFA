@@ -1,0 +1,5 @@
+unit peso = 15 gramas;
+unit tensao = 1 volt;
+unit massa = 5 g;
+unit batatas = 3 batatas;
+unit rojoes = 5 batatas;

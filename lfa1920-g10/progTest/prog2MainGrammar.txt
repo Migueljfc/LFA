@@ -1,0 +1,6 @@
+unit Ampere = 10 A;
+unit hora = 2 h;
+
+unit AmpereHora = Ampere * hora;
+
+print(AmpereHora);

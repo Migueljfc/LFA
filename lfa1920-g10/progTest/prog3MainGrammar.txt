@@ -1,0 +1,19 @@
+unit ola = 15 kg;
+int i = 1;
+int quarentena = 31;
+
+int peso=70;
+
+int aumentodepeso = 3;
+
+for(int j=10; j>0 ; j--){
+  print(j);
+}
+
+if(i == 0) {
+  print(i);
+  i++;
+}else {
+  print(i);
+  i++;
+}
